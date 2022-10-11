@@ -9,7 +9,7 @@ Enjoy!
 
 ### Changing power warnings and shutdown threshold
 - Issue
-  - You may want to change what the phone consideres "low", "critical", and "immediate" battery percentage thresholds.
+  - You may want to change what the phone consideres "low", "critical", and "immediate action" battery percentage thresholds. This is especially useful to prevent your battery from becoming "flat". If this happens, the battery can be extremely difficult to charge up again. This is more of a preventative fix, but it may prove to be very helpful if you don't always keep a close eye on your battery level.
 - Fix
   - Edit your UPower configuration:
     ```shell
