@@ -22,7 +22,7 @@ Enjoy!
 - Issue
   - It might be helpful to disable the touchscreen if you have a bad digitizer which causes unwanted swipe/tap events. Use this fix and then Plug in a keyboard and mouse or use SSH instead until you can get your screen fixed.
 - Fix
-    If you are using SXMO this option exists already, simply toggle it from the menu. Otherwise, SSH in and run:
+  - If you are using SXMO this option exists already, simply toggle it from the menu. Otherwise, SSH in and run:
   - ```shell
     echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="0486", ATTR{authorized}="0"' | sudo tee /etc/udev/rules.d/100-touchscreen.rules > /dev/null && sudo udevadm control --reload-rules && sudo udevadm trigger
     ```
