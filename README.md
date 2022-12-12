@@ -35,3 +35,4 @@ Enjoy!
 - [milky-sway's PinePhone Scripts](https://github.com/milky-sway/pinephone-scripts) (github.com)
 - [Max1220’s PinePhone scripts and tweaks](https://forum.level1techs.com/t/max1220s-pinephone-scripts-and-tweaks/172293) (level1techs.com)
 - [Dejvino's PinePhone scripts for Sway](https://github.com/Dejvino/pinephone-sway-poc/tree/master/usr/local/bin) (github.com)
+- [JonathanTippy's (snek100's) PinePhone helper scripts](https://github.com/JonathanTippy/pinephone_helpers) (github.com)
