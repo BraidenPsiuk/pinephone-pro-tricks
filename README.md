@@ -8,7 +8,7 @@ Enjoy!
 
 ---
 
-### Changing power warnings and shutdown threshold
+### (ANY) Changing power warnings and shutdown threshold
 - Issue
   - You may want to change what the phone consideres "low", "critical", and "immediate action" battery percentage thresholds. This is especially useful to prevent your battery from becoming "flat". If this happens, the battery can be extremely difficult to charge up again. This is more of a preventative fix, but it may prove to be very helpful if you don't always keep a close eye on your battery level.
 - Fix
@@ -19,7 +19,7 @@ Enjoy!
   - Modify the values for **"PercentageLow"**, **"PercentageCritical"**, and **"PercentageAction"**. In my case I used 20, 10, and 6 respectively.
   - At the end of the file, change **"CriticalPowerAction"** to **"PowerOff"**
 
-### Disabling the touchscreen ( ❌ )
+### (PHOSH) Disabling the touchscreen ( ❌ )
 - Issue
   - It might be helpful to disable the touchscreen if you have a bad digitizer which causes unwanted swipe/tap events. Use this fix and then Plug in a keyboard and mouse or use SSH instead until you can get your screen fixed.
 - Fix
@@ -27,6 +27,17 @@ Enjoy!
   - ```shell
     echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="0486", ATTR{authorized}="0"' | sudo tee /etc/udev/rules.d/100-touchscreen.rules > /dev/null && sudo udevadm control --reload-rules && sudo udevadm trigger
     ```
+
+### (SXMO) Preventing 3 presses of volume-down from killing your open windows
+- Issue
+  - Sometimes, pressing volume-down just one or two times kills windows unintentially. It's like you've pressed the key three times, even though you know you didn't. (Don't worry, you're not going insane! Well maybe just a bit, since you've forced yourself to use SXMO...) This may be due to improper debouncing configuration (I'm not sure what a proper fix is for this). But this fix will prevent unwanted window kills.
+- Fix
+  - Edit your three-button-touchscreen inputhandler hook:
+  - ```shell
+    sudo nano /usr/share/sxmo/default_hooks/three_button_touchscreen/sxmo_hook_inputhandler.sh
+    ```
+  - Find the comment **"standard handling"**, and then look for the case **"voldown_three"**.
+  - Comment out **"sxmo_killwindow.sh"**
 
 ---
 
